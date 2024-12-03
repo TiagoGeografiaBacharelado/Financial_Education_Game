@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgpfwe2wulup6"]
+
+[ext_resource type="Texture2D" uid="uid://n7hetowbxtks" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="1_npy4g"]
+[ext_resource type="Texture2D" uid="uid://c3ej56p6v2l8u" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="2_aee83"]
+[ext_resource type="Texture2D" uid="uid://bvxx3pqef7ihl" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="3_ubrpq"]
+[ext_resource type="Texture2D" uid="uid://bgwni0nbhux4p" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="4_d5l5b"]
+[ext_resource type="Texture2D" uid="uid://2xbivyt4fuxf" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="5_e4n13"]
+[ext_resource type="Texture2D" uid="uid://40xpjt7avolw" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="6_vfpsj"]
+
+[sub_resource type="TileSet" id="TileSet_tco32"]
+
+[node name="World-02" type="Node2D"]
+
+[node name="level" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_tco32")
+format = 2
+
+[node name="BG" type="ParallaxBackground" parent="."]
+
+[node name="06" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/06"]
+texture = ExtResource("1_npy4g")
+
+[node name="05" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/05"]
+texture = ExtResource("2_aee83")
+
+[node name="04" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/04"]
+texture = ExtResource("3_ubrpq")
+
+[node name="03" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/03"]
+texture = ExtResource("4_d5l5b")
+
+[node name="02" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/02"]
+texture = ExtResource("5_e4n13")
+
+[node name="01" type="ParallaxLayer" parent="BG"]
+position = Vector2(147, 106)
+motion_mirroring = Vector2(432, 0)
+
+[node name="texture" type="Sprite2D" parent="BG/01"]
+texture = ExtResource("6_vfpsj")

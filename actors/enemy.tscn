@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx4pvxcyq3js8"]
+
+[ext_resource type="Texture2D" uid="uid://d8dkev67mmxu" path="res://assets/Sprite Pack 2/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="1_5uq3f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wh1eg"]
+radius = 6.0
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_5uq3f")
+hframes = 2
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_wh1eg")
+
+[node name="anim" type="AnimationPlayer" parent="."]
