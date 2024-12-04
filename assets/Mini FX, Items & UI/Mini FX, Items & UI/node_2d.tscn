@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkqmb24f25lsc"]
+
+[ext_resource type="Texture2D" uid="uid://cxr3wgd6nc0g" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="1_asslj"]
+[ext_resource type="Texture2D" uid="uid://cnpr2tu7ndn7j" path="res://shaders/pixilart-drawing.png" id="1_ggrs6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6jfy"]
+atlas = ExtResource("1_asslj")
+region = Rect2(0, 0, 80, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mj0cu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6jfy")
+}],
+"loop": true,
+"name": &"cartao",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq4t7"]
+size = Vector2(77.25, 46)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(41, 4)
+sprite_frames = SubResource("SpriteFrames_mj0cu")
+animation = &"cartao"
+autoplay = "cartao"
+
+[node name="Pixilart-drawing" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(67, 18)
+scale = Vector2(0.24, 0.27)
+texture = ExtResource("1_ggrs6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Pixilart-drawing"]
+position = Vector2(-4.16667, -3.7037)
+shape = SubResource("RectangleShape2D_bq4t7")
