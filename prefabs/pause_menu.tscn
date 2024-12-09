@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpojlc583t3v"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ai7fi"]
+[ext_resource type="FontFile" uid="uid://qsrp6cps3b84" path="res://assets/fonts/at01.ttf" id="4_v7mru"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ai7fi")
+
+[node name="bg_overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.156863)
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="resume_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_v7mru")
+theme_override_font_sizes/font_size = 32
+text = "RETORNAR"
+
+[node name="resume_btn2" type="Button" parent="menu_holder"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_v7mru")
+theme_override_font_sizes/font_size = 32
+text = "SAIR"
+
+[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/resume_btn2" to="." method="_on_resume_btn_2_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ber4yxi41jwcg"]
+[gd_scene load_steps=37 format=3 uid="uid://ber4yxi41jwcg"]
 
 [ext_resource type="Texture2D" uid="uid://ccxs1rrga3dq1" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ofhld"]
 [ext_resource type="Texture2D" uid="uid://cudh7tkenjxwa" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_aoquw"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bsqhu3np400lc" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_right_PRESSED.png" id="24_uk81e"]
 [ext_resource type="Texture2D" uid="uid://bvgfdtrtqv6ew" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_up_NORMAL.png" id="25_7dbkg"]
 [ext_resource type="Texture2D" uid="uid://dh4te8ha5vo0u" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_up_PRESSED.png" id="26_kdjxu"]
+[ext_resource type="PackedScene" uid="uid://mpojlc583t3v" path="res://prefabs/pause_menu.tscn" id="27_fp16y"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_c1ae4"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -434,3 +435,6 @@ position = Vector2(592, 254)
 texture_normal = ExtResource("25_7dbkg")
 texture_pressed = ExtResource("26_kdjxu")
 action = "ui_accept"
+
+[node name="pause_menu" parent="controls/ui_up" instance=ExtResource("27_fp16y")]
+visible = false
