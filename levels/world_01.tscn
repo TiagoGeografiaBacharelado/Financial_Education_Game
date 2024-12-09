@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ber4yxi41jwcg"]
+[gd_scene load_steps=36 format=3 uid="uid://ber4yxi41jwcg"]
 
 [ext_resource type="Texture2D" uid="uid://ccxs1rrga3dq1" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ofhld"]
 [ext_resource type="Texture2D" uid="uid://cudh7tkenjxwa" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_aoquw"]
@@ -20,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://d3n2fld1o1svu" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/Life-Counter-Icon.png" id="17_7qok8"]
 [ext_resource type="Script" path="res://scripts/warning_sign.gd" id="19_l4avg"]
 [ext_resource type="Texture2D" uid="uid://byfjobyscq75o" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="20_od4ds"]
+[ext_resource type="Texture2D" uid="uid://ddwmxqdn3kgtu" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_left_NORMAL.png" id="21_d6c63"]
+[ext_resource type="Texture2D" uid="uid://e0d3ybdnvw2i" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_left_PRESSED.png" id="22_25iui"]
+[ext_resource type="Texture2D" uid="uid://b1jv31iy3qm70" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_right_NORMAL.png" id="23_qc4c7"]
+[ext_resource type="Texture2D" uid="uid://bsqhu3np400lc" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_right_PRESSED.png" id="24_uk81e"]
+[ext_resource type="Texture2D" uid="uid://bvgfdtrtqv6ew" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_up_NORMAL.png" id="25_7dbkg"]
+[ext_resource type="Texture2D" uid="uid://dh4te8ha5vo0u" path="res://assets/Extras/mini_ui_buttons/ui_buttons_arrow_up_PRESSED.png" id="26_kdjxu"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_c1ae4"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -171,7 +177,7 @@ frame_3/duration = 1.0
 size = Vector2(19, 13.5)
 
 [node name="World-01" type="Node2D"]
-position = Vector2(306, 955)
+position = Vector2(289, 338)
 
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_i73m1")
@@ -221,89 +227,52 @@ position = Vector2(-184, 50)
 [node name="BG" type="ParallaxBackground" parent="."]
 
 [node name="05" type="ParallaxLayer" parent="BG"]
-position = Vector2(22, 698)
-motion_mirroring = Vector2(432, 156)
+scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="BG/05"]
-position = Vector2(-21, -40)
-scale = Vector2(7.39236, 1.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_717bx")
 centered = false
 
 [node name="04" type="ParallaxLayer" parent="BG"]
-position = Vector2(22, 752)
+scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="back_cloud" type="Sprite2D" parent="BG/04"]
-position = Vector2(-14, 0)
-scale = Vector2(5.16667, 1.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_wtd1r")
 centered = false
 
 [node name="03" type="ParallaxLayer" parent="BG"]
-position = Vector2(22, 752)
+scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="clouds" type="Sprite2D" parent="BG/03"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_4nefc")
-position = Vector2(3, 0)
-scale = Vector2(1.5625, 1.5)
-texture = ExtResource("6_fklb2")
-centered = false
-
-[node name="clouds2" type="Sprite2D" parent="BG/03"]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_4nefc")
-position = Vector2(880, 2.00002)
-scale = Vector2(1.5, 1.46154)
-texture = ExtResource("6_fklb2")
-centered = false
-
-[node name="clouds3" type="Sprite2D" parent="BG/03"]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_4nefc")
-position = Vector2(1742, 1.52588e-05)
-scale = Vector2(1.5, 1.46154)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_fklb2")
 centered = false
 
 [node name="02" type="ParallaxLayer" parent="BG"]
-position = Vector2(22, 752)
+scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="BG/02"]
-scale = Vector2(1.78819, 1.5)
-texture = ExtResource("7_qn25c")
-centered = false
-
-[node name="texture2" type="Sprite2D" parent="BG/02"]
-position = Vector2(935, 2)
-scale = Vector2(1.86806, 1.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_qn25c")
 centered = false
 
 [node name="01" type="ParallaxLayer" parent="BG"]
-position = Vector2(22, 752)
+scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.9, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="BG/01"]
-scale = Vector2(1.51042, 1.5)
-texture = ExtResource("8_vc6le")
-centered = false
-
-[node name="texture2" type="Sprite2D" parent="BG/01"]
-position = Vector2(857, 0)
-scale = Vector2(1.50347, 1.5)
-texture = ExtResource("8_vc6le")
-centered = false
-
-[node name="texture3" type="Sprite2D" parent="BG/01"]
-position = Vector2(1722, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_vc6le")
 centered = false
@@ -443,5 +412,25 @@ position = Vector2(-168, -170)
 collision_layer = 2
 
 [node name="collision" type="CollisionShape2D" parent="warning_sign/area_sign"]
-position = Vector2(-0.5, 226.25)
+position = Vector2(0, 193.25)
 shape = SubResource("RectangleShape2D_nn6em")
+
+[node name="controls" type="CanvasLayer" parent="."]
+
+[node name="ui_left" type="TouchScreenButton" parent="controls"]
+position = Vector2(14, 253)
+texture_normal = ExtResource("21_d6c63")
+texture_pressed = ExtResource("22_25iui")
+action = "ui_left"
+
+[node name="ui_right" type="TouchScreenButton" parent="controls"]
+position = Vector2(56, 253)
+texture_normal = ExtResource("23_qc4c7")
+texture_pressed = ExtResource("24_uk81e")
+action = "ui_right"
+
+[node name="ui_up" type="TouchScreenButton" parent="controls"]
+position = Vector2(592, 254)
+texture_normal = ExtResource("25_7dbkg")
+texture_pressed = ExtResource("26_kdjxu")
+action = "ui_accept"
