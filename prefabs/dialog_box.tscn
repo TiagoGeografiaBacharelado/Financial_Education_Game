@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb8osinlcktmc"]
+[gd_scene load_steps=4 format=3 uid="uid://3r7xbmsouxxq"]
 
-[ext_resource type="Texture2D" uid="uid://drrhvy4rwiqcw" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Dialog_Box.png" id="1_f2bl5"]
-[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_kae1i"]
-[ext_resource type="FontFile" uid="uid://qsrp6cps3b84" path="res://assets/fonts/at01.ttf" id="2_557tb"]
+[ext_resource type="Texture2D" uid="uid://b2uhc56ne8nn" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/Dialog_Box(16 x 16).png" id="1_1tb6t"]
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="1_fjatu"]
+[ext_resource type="FontFile" uid="uid://ddaedpjhd2xx6" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/RevMiniPixel.ttf" id="2_m2d43"]
 
-[node name="dialog_box" type="MarginContainer"]
+[node name="dialog_box1" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_kae1i")
+script = ExtResource("1_fjatu")
 
-[node name="background" type="NinePatchRect" parent="."]
+[node name="backround" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_f2bl5")
+texture = ExtResource("1_1tb6t")
 region_rect = Rect2(0, 0, 16, 16)
 patch_margin_left = 4
 patch_margin_top = 4
@@ -28,12 +28,11 @@ theme_override_constants/margin_bottom = 4
 [node name="text_label" type="Label" parent="label_margin"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_557tb")
-theme_override_font_sizes/font_size = 16
-horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("2_m2d43")
+theme_override_font_sizes/font_size = 8
 vertical_alignment = 1
 
-[node name="letter_time_display" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="letter_time_display" to="." method="_on_letter_time_display_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

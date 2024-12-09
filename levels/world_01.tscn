@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ber4yxi41jwcg"]
+[gd_scene load_steps=30 format=3 uid="uid://ber4yxi41jwcg"]
 
 [ext_resource type="Texture2D" uid="uid://ccxs1rrga3dq1" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ofhld"]
 [ext_resource type="Texture2D" uid="uid://cudh7tkenjxwa" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_aoquw"]
@@ -12,11 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://clh5trjl51li7" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_vc6le"]
 [ext_resource type="PackedScene" uid="uid://c54df0ruvmhjn" path="res://moving_plataform.tscn" id="10_74f4s"]
 [ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/00_Coin-Sprites.png" id="12_1wkos"]
+[ext_resource type="Script" path="res://scripts/HUD_manager.gd" id="12_4moah"]
 [ext_resource type="Texture2D" uid="uid://byt5ar30rr4lk" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/01_Coin-Sprites.png" id="13_30r00"]
 [ext_resource type="Texture2D" uid="uid://dn4vcy65s8hmt" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/02_Coin-Sprites.png" id="14_70k8d"]
 [ext_resource type="Texture2D" uid="uid://bstuh08nhmt8u" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/03_Coin-Sprites.png" id="15_18muc"]
 [ext_resource type="FontFile" uid="uid://ddaedpjhd2xx6" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/RevMiniPixel.ttf" id="16_1634s"]
 [ext_resource type="Texture2D" uid="uid://d3n2fld1o1svu" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Coin-Sprites/Life-Counter-Icon.png" id="17_7qok8"]
+[ext_resource type="Script" path="res://scripts/warning_sign.gd" id="19_l4avg"]
+[ext_resource type="Texture2D" uid="uid://byfjobyscq75o" path="res://assets/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="20_od4ds"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_c1ae4"]
 tile_data = PackedInt32Array(0, 65537, 1)
@@ -155,6 +158,7 @@ shader_parameter/move_speed = 0.05
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_vdf5l"]
 frames = 4
+speed_scale = 2.0
 frame_0/texture = ExtResource("12_1wkos")
 frame_1/texture = ExtResource("13_30r00")
 frame_1/duration = 1.0
@@ -162,6 +166,9 @@ frame_2/texture = ExtResource("14_70k8d")
 frame_2/duration = 1.0
 frame_3/texture = ExtResource("15_18muc")
 frame_3/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn6em"]
+size = Vector2(19, 13.5)
 
 [node name="World-01" type="Node2D"]
 position = Vector2(306, 955)
@@ -310,6 +317,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("12_4moah")
 
 [node name="container" type="MarginContainer" parent="HUD/Control"]
 layout_mode = 1
@@ -335,7 +343,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = SubResource("AnimatedTexture_vdf5l")
 
-[node name="contador_moedas" type="Label" parent="HUD/Control/container/Coins_container"]
+[node name="coins_counter" type="Label" parent="HUD/Control/container/Coins_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -364,7 +372,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("16_1634s")
 theme_override_font_sizes/font_size = 20
-text = "000000  "
+text = "00:00  "
 vertical_alignment = 1
 
 [node name="Score_container2" type="HBoxContainer" parent="HUD/Control/container"]
@@ -419,3 +427,21 @@ theme_override_fonts/font = ExtResource("16_1634s")
 theme_override_font_sizes/font_size = 20
 text = "03"
 vertical_alignment = 1
+
+[node name="warning_sign" type="Node2D" parent="."]
+script = ExtResource("19_l4avg")
+
+[node name="textura" type="Sprite2D" parent="warning_sign"]
+visible = false
+position = Vector2(-168, 41)
+texture = ExtResource("20_od4ds")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="area_sign" type="Area2D" parent="warning_sign"]
+position = Vector2(-168, -170)
+collision_layer = 2
+
+[node name="collision" type="CollisionShape2D" parent="warning_sign/area_sign"]
+position = Vector2(-0.5, 226.25)
+shape = SubResource("RectangleShape2D_nn6em")
